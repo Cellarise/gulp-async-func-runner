@@ -33,6 +33,23 @@ gulp.src('test/*')
 
 #Changelog
 
+###Version: 0.1.1 - released 2014-08-05
+<table style="width:100%;border-spacing:0px;border-collapse:collapse;margin:0px;padding:0px;border-width:0px;">
+   <tr>
+    <th style="width:20px;text-align:center;"></th>
+    <th style="width:80px;text-align:center;">Type</th> 
+    <th style="width:80px;text-align:left;">ID</th>
+    <th style="text-align:left;">Summary</th>
+   </tr>
+
+  <tr>
+    <td style="width:20px;text-align:center;"><img src='https://jira.cellarise.com/secure/viewavatar?size=xsmall&amp;avatarId=10403&amp;avatarType=issuetype'/></td> 
+    <td style="width:80px;text-align:center;">Bug</td> 
+    <td style="width:80px;text-align:left;">MDGASYNC-3</td>
+    <td>Task: Fix stream.push() after EOF called</td>
+   </tr>
+
+</table>
 ###Version: 0.1.0 - released 2014-09-05
 <table style="width:100%;border-spacing:0px;border-collapse:collapse;margin:0px;padding:0px;border-width:0px;">
    <tr>
