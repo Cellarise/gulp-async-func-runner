@@ -3,6 +3,7 @@ var rename = require("gulp-rename");
 var path = require('path');
 var GulpDustCompileRender = require('gulp-dust-compile-render');
 var jiraRest = require('../lib/jira-rest');
+var asyncPipe = require('gulp-async-function-runner');
 
 /**
  * A gulp build task to compile and render the `doc/templates/readme.dust.md` document template.
@@ -92,7 +93,7 @@ module.exports = function(gulp, context) {
             partialsGlob: path.join(cwd, directories.doc) + '/templates/*.dust*'
         };
 
-        var jiraQuery = "(project = " + pkg.config.projectCode + " AND " +
+        var jiraQuery = "search?jql=(project = " + pkg.config.projectCode + " AND " +
             "issuetype in standardIssueTypes() AND issuetype != Task AND " +
             "resolution != Unresolved AND " +
             "fixVersion in (unreleasedVersions(), releasedVersions())) ORDER BY fixVersion DESC, resolutiondate DESC";
@@ -101,12 +102,15 @@ module.exports = function(gulp, context) {
         var config = require(configPath).applications.jira;
 
         return gulp.src(directories.doc + '/templates/readme.dust.md')
-            .pipe(jiraRest.syncTask({
+            .pipe(asyncPipe({
                 oneTimeRun: true,
+                passThrough: true,
                 config: config,
                 jql: jiraQuery + queryFields
             },
-                jiraRest.getJql,
+                function(opts, chunk, cb){
+                    jiraRest.getJql(opts, cb);
+                },
                 function(error, data){
                 if(!error){
                     pkg.changelog = prepareChangeLogJSON(data);
