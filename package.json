@@ -1,6 +1,6 @@
 {
   "author": "John Barry",
-  "name": "gulp-async-function-runner",
+  "name": "gulp-async-func-runner",
   "description": "A gulp task for running asynchronous functions.",
   "version": "0.1.2",
   "license": "MIT License (MIT)",
@@ -13,8 +13,8 @@
   },
   "config": {
     "adminEmail": "admin@cellarise.com",
-    "build": "11",
-    "buildTimestamp": "2014-09-05T15:42:01.973+10:00"
+    "build": "13",
+    "buildTimestamp": "2014-09-05T15:48:11.291+10:00"
   },
   "main": "./lib",
   "directories": {
