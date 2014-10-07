@@ -3,7 +3,7 @@
 var English = require('yadda').localisation.English;
 var assert = require('assert');
 var gulp = require('gulp');
-var asyncPipe = require('..');
+var asyncPipe = require('../..');
 
 /* Feature: Package: Develop asynchronous function runner. */
 module.exports = (function () {
