@@ -7,7 +7,7 @@
 > A gulp task for running asynchronous functions.
 
 
-##Usage 
+## Usage
 
 This gulp task expects an options object, an asynchronous function and a callback function. The task runs the asynchronous function passing it the options, a chunk of data, and the callback function.
 
@@ -24,6 +24,7 @@ gulp.src('test/*')
         callback)
     );
 ```
+
 
 
 ## API
@@ -99,6 +100,18 @@ gulp.src('test/*')
     <th style="width:80px;text-align:left;">ID</th>
     <th style="text-align:left;">Summary</th>
   </tr>
+    
+<tr>
+        <td colspan=4><strong>Version: 0.1.7 - released 2015-05-24</strong></td>
+      </tr>
+        
+<tr>
+            <td style="width:20px;padding:0;margin:0;text-align:center;"><img src="https://jira.cellarise.com:80/secure/viewavatar?size=xsmall&amp;avatarId=10419&amp;avatarType=issuetype"/></td>
+            <td style="width:80px;text-align:left;">Non-functional</td>
+            <td style="width:80px;text-align:left;">MDGASYNC-17</td>
+            <td><p>Package: Fix readme-usage header</p><p></p></td>
+          </tr>
+        
     
 <tr>
         <td colspan=4><strong>Version: 0.1.6 - released 2015-05-24</strong></td>

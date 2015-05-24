@@ -1,4 +1,4 @@
-##Usage 
+## Usage
 
 This gulp task expects an options object, an asynchronous function and a callback function. The task runs the asynchronous function passing it the options, a chunk of data, and the callback function.
 
