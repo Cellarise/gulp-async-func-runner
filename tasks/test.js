@@ -15,7 +15,7 @@ module.exports = function testTasks(gulp, context) {
   var istanbul = require("gulp-istanbul");
   var glob = require("glob");
   var path = require("path");
-  var _ = require("underscore");
+  var R = require("ramda");
   var logger = context.logger;
 
   var handleError = function handleError(err) {
@@ -30,7 +30,7 @@ module.exports = function testTasks(gulp, context) {
     var sourceGlobStr = directories.lib + "/**/*.js";
     var scriptPath;
     //require all library scripts to ensure istanbul picks up
-    _.each(glob.sync(sourceGlobStr), function eachSourceGlobStrFN(value) {
+    R.forEach(function eachSourceGlobStrFN(value) {
       scriptPath = path.resolve(process.cwd(), value);
       try {
         require(scriptPath); // Make sure all files are loaded to get accurate coverage data
@@ -38,7 +38,7 @@ module.exports = function testTasks(gulp, context) {
       } catch (err) {
         logger.warn("Could not load: " + scriptPath);
       }
-    });
+    }, glob.sync(sourceGlobStr));
 
     //set YADDA_FEATURE_GLOB if argv[2]
     if (context.argv.length === 2) {
@@ -47,19 +47,19 @@ module.exports = function testTasks(gulp, context) {
     }
 
     return gulp.src(directories.test + "/test.js")
-      .pipe(mocha({
-        "reporter": reporter,
-        "timeout": 600000
-      }))
-      .on("error", handleError)
-      .pipe(istanbul.writeReports({
-        "coverageVariable": "__cpmCoverage__",
-        "reporters": ["html", require("istanbul-reporter-clover-limits"), "json-summary"],
-        "reportOpts": {
-          "dir": cwd + "/" + directories.reports + "/code-coverage",
-          "watermarks": pkg.config.coverage.watermarks
-        }
-      }));
+        .pipe(mocha({
+          "reporter": reporter,
+          "timeout": 600000
+        }))
+        .on("error", handleError)
+        .pipe(istanbul.writeReports({
+          "coverageVariable": "__cpmCoverage__",
+          "reporters": ["html", require("istanbul-reporter-clover-limits"), "json-summary"],
+          "reportOpts": {
+            "dir": cwd + "/" + directories.reports + "/code-coverage",
+            "watermarks": pkg.config.coverage.watermarks
+          }
+        }));
   };
 
   /**
@@ -80,9 +80,9 @@ module.exports = function testTasks(gulp, context) {
      * Make sure all these tasks do not require local references as defined above.
      */
     return gulp.src(sourceGlobStr)
-      .pipe(istanbul({"coverageVariable": "__cpmCoverage__"}))
-      .pipe(istanbul.hookRequire()); // Force `require` to return covered files
-        // Covering files - note: finish event called when finished (not end event)
+        .pipe(istanbul({"coverageVariable": "__cpmCoverage__"}))
+        .pipe(istanbul.hookRequire()); // Force `require` to return covered files
+    // Covering files - note: finish event called when finished (not end event)
   });
 
   /**

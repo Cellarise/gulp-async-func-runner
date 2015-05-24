@@ -3,6 +3,8 @@ var path = require("path");
 var R = require("ramda");
 var glob = require("glob");
 var Yadda = require("yadda");
+var bunyanFormat = require("bunyan-format");
+var logger = require("bunyan").createLogger({"name": "TEST", "stream": bunyanFormat({"outputMode": "short"})});
 
 //setup paths
 var cwd = process.cwd();
@@ -12,10 +14,6 @@ var testDir = path.join(cwd, directories.test);
 var testLibrariesDir = testDir;
 var testFeaturesDir = testDir + path.sep;
 var tstGlob = [];
-
-//setup logger
-var bunyanFormat = require("bunyan-format");
-var logger = require("bunyan").createLogger({"name": "TEST", "stream": bunyanFormat({"outputMode": "short"})});
 
 //get browser test config
 var testConfig = R.merge({
