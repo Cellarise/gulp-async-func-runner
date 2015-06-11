@@ -47,19 +47,19 @@ module.exports = function testTasks(gulp, context) {
     }
 
     return gulp.src(directories.test + "/test.js")
-        .pipe(mocha({
-          "reporter": reporter,
-          "timeout": 600000
-        }))
-        .on("error", handleError)
-        .pipe(istanbul.writeReports({
-          "coverageVariable": "__cpmCoverage__",
-          "reporters": ["html", require("istanbul-reporter-clover-limits"), "json-summary"],
-          "reportOpts": {
-            "dir": cwd + "/" + directories.reports + "/code-coverage",
-            "watermarks": pkg.config.coverage.watermarks
-          }
-        }));
+      .pipe(mocha({
+        "reporter": reporter,
+        "timeout": 600000
+      }))
+      .on("error", handleError)
+      .pipe(istanbul.writeReports({
+        "coverageVariable": "__cpmCoverage__",
+        "reporters": ["html", require("istanbul-reporter-clover-limits"), "json-summary"],
+        "reportOpts": {
+          "dir": cwd + "/" + directories.reports + "/code-coverage",
+          "watermarks": pkg.config.coverage.watermarks
+        }
+      }));
   };
 
   /**
@@ -80,9 +80,9 @@ module.exports = function testTasks(gulp, context) {
      * Make sure all these tasks do not require local references as defined above.
      */
     return gulp.src(sourceGlobStr)
-        .pipe(istanbul({"coverageVariable": "__cpmCoverage__"}))
-        .pipe(istanbul.hookRequire()); // Force `require` to return covered files
-    // Covering files - note: finish event called when finished (not end event)
+      .pipe(istanbul({"coverageVariable": "__cpmCoverage__"}))
+      .pipe(istanbul.hookRequire()); // Force `require` to return covered files
+        // Covering files - note: finish event called when finished (not end event)
   });
 
   /**
