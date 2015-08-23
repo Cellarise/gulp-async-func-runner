@@ -21,7 +21,7 @@ var testUtils = require('./testUtils')(testConfig);
 //Setup test 'world' context object including world.logger, assertion library, and the browser context object
 //Note: world.before and world.after are reserved for adding before and after functions
 var worldContext = {"world": {"logger": logger}, "cwd": cwd, "browser": {"config": testConfig}};
-
+logger.info("start test");
 //initiate mocha and run test suite
 Yadda.plugins.mocha.StepLevelPlugin.init();
 describe('', testUtils.getTestSuite(Yadda, worldContext, pkg.directories));
