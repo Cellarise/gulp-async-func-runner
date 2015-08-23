@@ -54,7 +54,7 @@ module.exports = function testTasks(gulp, context) {
       .on("error", handleError)
       .pipe(istanbul.writeReports({
         "coverageVariable": "__cpmCoverage__",
-        "reporters": ["html", require("istanbul-reporter-clover-limits"), "json-summary"],
+        "reporters": ["html", "lcov", require("istanbul-reporter-clover-limits"), "json-summary"],
         "reportOpts": {
           "dir": cwd + "/" + directories.reports + "/code-coverage",
           "watermarks": pkg.config.coverage.watermarks

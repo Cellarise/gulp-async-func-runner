@@ -17,7 +17,9 @@ module.exports = function defaultTasks(gulp) {
    */
   gulp.task("default", function defaultTask(cb) {
     runSequence(
+      "code_analysis",
       "test",
+      "coverage_stats",
       cb);
   });
 };

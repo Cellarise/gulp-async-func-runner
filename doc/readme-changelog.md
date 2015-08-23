@@ -1,4 +1,4 @@
-# Changelog
+#Changelog
 
 <table style="width:100%;border-spacing:0px;border-collapse:collapse;margin:0px;padding:0px;border-width:0px;">
   <tr>
@@ -7,42 +7,6 @@
     <th style="width:80px;text-align:left;">ID</th>
     <th style="text-align:left;">Summary</th>
   </tr>
-    
-<tr>
-        <td colspan=4><strong>Version: 0.1.8 - released 2015-06-12</strong></td>
-      </tr>
-        
-<tr>
-            <td style="width:20px;padding:0;margin:0;text-align:center;"><img src="https://jira.cellarise.com:80/secure/viewavatar?size=xsmall&amp;avatarId=10419&amp;avatarType=issuetype"/></td>
-            <td style="width:80px;text-align:left;">Non-functional</td>
-            <td style="width:80px;text-align:left;">MDGASYNC-18</td>
-            <td><p>Package: Update package dependencies</p><p></p></td>
-          </tr>
-        
-    
-<tr>
-        <td colspan=4><strong>Version: 0.1.7 - released 2015-05-24</strong></td>
-      </tr>
-        
-<tr>
-            <td style="width:20px;padding:0;margin:0;text-align:center;"><img src="https://jira.cellarise.com:80/secure/viewavatar?size=xsmall&amp;avatarId=10419&amp;avatarType=issuetype"/></td>
-            <td style="width:80px;text-align:left;">Non-functional</td>
-            <td style="width:80px;text-align:left;">MDGASYNC-17</td>
-            <td><p>Package: Fix readme-usage header</p><p></p></td>
-          </tr>
-        
-    
-<tr>
-        <td colspan=4><strong>Version: 0.1.6 - released 2015-05-24</strong></td>
-      </tr>
-        
-<tr>
-            <td style="width:20px;padding:0;margin:0;text-align:center;"><img src="https://jira.cellarise.com:80/secure/viewavatar?size=xsmall&amp;avatarId=10419&amp;avatarType=issuetype"/></td>
-            <td style="width:80px;text-align:left;">Non-functional</td>
-            <td style="width:80px;text-align:left;">MDGASYNC-16</td>
-            <td><p>Package: Update development dependencies</p><p></p></td>
-          </tr>
-        
     
 <tr>
         <td colspan=4><strong>Version: 0.1.5 - released 2015-05-21</strong></td>

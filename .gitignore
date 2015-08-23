@@ -1,0 +1,16 @@
+.idea/
+/Tools/
+/Build/
+/Temp/
+/bower_components/
+/Reports/
+/rsa-cert.*
+/rsa-key.*
+/config.json
+/*.log
+/Auto_Build/
+/node_modules/*
+!/node_modules/gulp-util
+!/node_modules/gulp-util/*
+!/node_modules/through2
+!/node_modules/through2/*
