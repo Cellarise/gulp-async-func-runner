@@ -39,18 +39,18 @@
       "stats": {
         "lines": {
           "pctSkipped": 0,
-          "pct": 92,
-          "colour": "green"
+          "pct": 16,
+          "colour": "red"
         },
         "branches": {
           "pctSkipped": 0,
-          "pct": 68,
-          "colour": "yellow"
+          "pct": 100,
+          "colour": "brightgreen"
         },
         "statements": {
           "pctSkipped": 0,
-          "pct": 85,
-          "colour": "green"
+          "pct": 15,
+          "colour": "red"
         },
         "functions": {
           "pctSkipped": 0,
@@ -61,8 +61,8 @@
           "pct": 0
         },
         "overall": {
-          "pct": 86,
-          "colour": "green"
+          "pct": 58,
+          "colour": "yellow"
         }
       }
     },
