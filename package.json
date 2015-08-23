@@ -78,7 +78,7 @@
     "doc": "doc",
     "tasks": "tasks",
     "templates": "templates",
-    "test": "Test",
+    "test": "test",
     "reports": "Reports",
     "build": "Build"
   },
