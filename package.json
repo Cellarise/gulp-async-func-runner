@@ -102,6 +102,7 @@
     "mocha-bamboo-reporter-bgo": "^1.0.7",
     "run-sequence": "^1.0.0",
     "ramda": "^0.14.0",
+    "mocha": "^2.2.5",
     "mkdirp": "^0.5.0"
   },
   "optionalDependencies": {}
