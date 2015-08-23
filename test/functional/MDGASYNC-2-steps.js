@@ -17,7 +17,7 @@ module.exports = (function testSuite() {
       done();
     })
     .define("When executing the function as part of a gulp pipe", function test(done) {
-      assert(true);
+      assert(false);
       done();
     })
     .define("Then the pipe will wait for function to complete before continuing", function test(done) {
