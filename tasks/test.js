@@ -13,6 +13,7 @@ module.exports = function testTasks(gulp, context) {
   var mocha = require("gulp-mocha");
   var mkdirp = require("mkdirp");
   var istanbul = require("gulp-istanbul");
+  var gutil = require("gulp-util");
   var glob = require("glob");
   var path = require("path");
   var R = require("ramda");
@@ -20,6 +21,12 @@ module.exports = function testTasks(gulp, context) {
 
   var handleError = function handleError(err) {
     logger.error(err.toString());
+    if (process.env.CI) {
+      throw new gutil.PluginError({
+        "plugin": "Gulp Mocha",
+        "message": err.toString()
+      });
+    }
     this.emit("end"); //jshint ignore:line
   };
 
@@ -45,12 +52,7 @@ module.exports = function testTasks(gulp, context) {
       process.env.YADDA_FEATURE_GLOB = context.argv[1];
       logger.info("Set process.env.YADDA_FEATURE_GLOB=" + process.env.YADDA_FEATURE_GLOB);
     }
-    try {
-      require(path.resolve(process.cwd(), directories.test + "/test.js"));
-      logger.info("Loaded: " + path.resolve(process.cwd(), directories.test + "/test.js"));
-    } catch (err) {
-      logger.warn("Could not load: " + scriptPath);
-    }
+
     return gulp.src(path.resolve(process.cwd(), directories.test + "/test.js"), {"read": false})
       .pipe(mocha({
         "reporter": reporter,

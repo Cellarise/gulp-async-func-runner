@@ -17,8 +17,6 @@ module.exports = (function testSuite() {
       done();
     })
     .define("When executing the function as part of a gulp pipe", function test(done) {
-      /* eslint no-console:0*/
-      console.log("When executing the function as part of a gulp pipe");
       assert(false);
       done();
     })

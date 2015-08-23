@@ -192,8 +192,6 @@ module.exports = function testUtils(opts) {
       var testLibrariesDir = this.getTestLibrariesDir(directories, worldContext.cwd);
       var tstGlob = this.getTstGlob(testFeaturesDir);
       var self = this;
-      worldContext.world.logger.info(testFeaturesDir);
-      worldContext.world.logger.info(testLibrariesDir);
       return function testSuite() {
         //beforeAll
         self.beforeAll(before, worldContext);
