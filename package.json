@@ -10,14 +10,11 @@
   },
   "config": {
     "projectCode": "MDGASYNC",
-    "codeClimate": {
-      "repos": "55d922eae30ba05df8004a93",
-      "badges": "5cc2f11c6c37069b9597"
-    },
     "build": "n/a",
-    "buildTimestamp": "2015-08-23T01:49:57.282Z",
+    "buildTimestamp": "2015-08-23T09:01:05.357Z",
     "adminEmail": "admin@cellarise.com",
     "coverage": {
+      "codeClimate": true,
       "watermarks": {
         "statements": [
           50,

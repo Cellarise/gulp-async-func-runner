@@ -3,8 +3,9 @@
 [![npm module downloads per month](http://img.shields.io/npm/dm/gulp-async-func-runner.svg?style=flat)](https://www.npmjs.org/package/gulp-async-func-runner)
 [![Dependency status](https://david-dm.org/Cellarise/gulp-async-func-runner.svg?style=flat)](https://david-dm.org/Cellarise/gulp-async-func-runner)
 [![Build Status](https://travis-ci.org/Cellarise/gulp-async-func-runner.svg?branch=master)](https://travis-ci.org/Cellarise/gulp-async-func-runner)
-[![Code Climate](https://codeclimate.com/repos/55d922eae30ba05df8004a93/badges/5cc2f11c6c37069b9597/gpa.svg)](https://codeclimate.com/repos/55d922eae30ba05df8004a93/feed)
-[![Test Coverage](https://codeclimate.com/repos/55d922eae30ba05df8004a93/badges/5cc2f11c6c37069b9597/coverage.svg)](https://codeclimate.com/repos/55d922eae30ba05df8004a93/coverage)
+[![Code
+Climate](https://codeclimate.com/github/Cellarise/gulp-async-func-runner/badges/gpa.svg)](https://codeclimate.com/github/Cellarise/gulp-async-func-runner)
+[![Test Coverage](https://codeclimate.com/github/Cellarise/gulp-async-func-runner/badges/coverage.svg)](https://codeclimate.com/github/Cellarise/gulp-async-func-runner/badges/coverage.svg)
 
 > A gulp task for running asynchronous functions.
 
