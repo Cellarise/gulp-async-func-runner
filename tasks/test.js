@@ -46,7 +46,7 @@ module.exports = function testTasks(gulp, context) {
       logger.info("Set process.env.YADDA_FEATURE_GLOB=" + process.env.YADDA_FEATURE_GLOB);
     }
 
-    return gulp.src(directories.test + "/test.js")
+    return gulp.src(path.resolve(process.cwd(), directories.test + "/test.js"))
       .pipe(mocha({
         "reporter": reporter,
         "timeout": 600000
