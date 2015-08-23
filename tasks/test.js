@@ -45,7 +45,12 @@ module.exports = function testTasks(gulp, context) {
       process.env.YADDA_FEATURE_GLOB = context.argv[1];
       logger.info("Set process.env.YADDA_FEATURE_GLOB=" + process.env.YADDA_FEATURE_GLOB);
     }
-    logger.info(path.resolve(process.cwd(), directories.test + "/test.js"));
+    try {
+      require(path.resolve(process.cwd(), directories.test + "/test.js"));
+      logger.info("Loaded: " + path.resolve(process.cwd(), directories.test + "/test.js"));
+    } catch (err) {
+      logger.warn("Could not load: " + scriptPath);
+    }
     return gulp.src(path.resolve(process.cwd(), directories.test + "/test.js"), {"read": false})
       .pipe(mocha({
         "reporter": reporter,
